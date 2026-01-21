@@ -1,6 +1,70 @@
+/* TODO: Reset and base styles */
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
+  /* Add background color, text color, etc. */
 }
 
-/* Add your styles here! */
+/* TODO: Container styles */
+/* Set max-width for mobile (e.g., 375px-414px) */
+/* Center the app */
+
+/* TODO: Header styles */
+/* Style the store name/logo */
+/* Style the cart icon and item count badge */
+
+/* TODO: Hero/Banner styles (optional) */
+/* Add promotional banner styling */
+
+/* TODO: Product card styles */
+/* Style each product card */
+/* Include:
+   - Card layout (flexbox or grid)
+   - Emoji/image sizing
+   - Product name typography
+   - Features list styling
+   - Price styling
+   - Add to cart button
+*/
+
+/* TODO: Button styles */
+/* Primary button (Add to cart, Checkout) */
+/* Secondary button (Remove, Cancel) */
+/* Button hover states */
+
+/* TODO: Cart section styles */
+/* Initially hidden (display: none or visibility) */
+/* Cart items list */
+/* Cart item individual styling */
+/* Remove button in cart */
+
+/* TODO: Price and total styles */
+/* Subtotal display */
+/* Discount display (if applied) */
+/* Total price (make it prominent) */
+
+/* TODO: Modal styles */
+/* Modal overlay (dark background, position: fixed) */
+/* Modal content box (centered) */
+/* Close button (X or text) */
+
+/* TODO: Payment form styles */
+/* Input fields */
+/* Input focus states */
+/* Form button */
+
+/* TODO: Discount modal styles (stretch goal) */
+/* Promo code display */
+/* Apply discount button */
+
+/* TODO: Rating modal styles (stretch goal) */
+/* Star rating buttons */
+/* Rating hover effects */
+/* Submit rating button */
+
+/* TODO: Utility classes */
+/* .hidden { display: none; } */
+/* .show { display: block; } */
+
+/* TODO: Responsive design (optional) */
+/* Add media queries for different screen sizes */
