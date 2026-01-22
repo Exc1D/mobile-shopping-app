@@ -4,31 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechShop - Your Tech Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- TODO: Add header section -->
-    <!-- Include: Store name/logo, cart icon with item count -->
+    <main>
+      <header>
+        <div class="header-container">
+          <div class="shop-title">
+            <h1>EXXEED GADGETS</h1>
+            <p>Simple tech but fun!</p>
+          </div>
+        </div>
+        <span class="cart-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </span>
+      </header>
+      <!-- Include: Store name/logo, cart icon with item count -->
 
-    <!-- TODO: Add hero/banner section (optional) -->
-    <!-- Include: Promotional message or featured product -->
+      <!-- TODO: Add hero/banner section (optional) -->
+      <section class="promo-container"></section>
+      <!-- Include: Promotional message or featured product -->
 
-    <!-- TODO: Add main container for products -->
-    <!-- Give it an id like "products-container" -->
-    <!-- Products will be rendered here by JavaScript -->
+      <section class="category-container">
+        <div class="categories">
+          <button>Gaming</button>
+          <button>Phones</button>
+          <button>Laptop</button>
+          <button>Sports</button>
+        </div>
+      </section>
 
-    <!-- TODO: Add cart section (initially hidden) -->
-    <!-- Give it an id like "cart-container" -->
-    <!-- Include: 
+      <!-- TODO: Add main container for products -->
+      <section class="products-container">
+        <div class="products" id="products">
+          <h2>Hot Sales</h2>
+        </div>
+      </section>
+      <!-- Give it an id like "products-container" -->
+      <!-- Products will be rendered here by JavaScript -->
+
+      <!-- TODO: Add cart section (initially hidden) -->
+      <!-- Give it an id like "cart-container" -->
+      <!-- Include: 
              - Cart heading
              - Cart items container (id="cart-items")
              - Order total section
              - Checkout button
         -->
 
-    <!-- TODO: Add payment modal (initially hidden) -->
-    <!-- Give it an id like "payment-modal" -->
-    <!-- Include:
+      <!-- TODO: Add payment modal (initially hidden) -->
+      <!-- Give it an id like "payment-modal" -->
+      <!-- Include:
              - Modal overlay
              - Close button
              - Form with:
@@ -37,20 +72,21 @@
                - Submit button
         -->
 
-    <!-- TODO: Add discount modal (stretch goal - initially hidden) -->
-    <!-- Give it an id like "discount-modal" -->
-    <!-- Include:
+      <!-- TODO: Add discount modal (stretch goal - initially hidden) -->
+      <!-- Give it an id like "discount-modal" -->
+      <!-- Include:
              - Promo code display
              - Apply button or close button
         -->
 
-    <!-- TODO: Add rating modal (stretch goal - initially hidden) -->
-    <!-- Give it an id like "rating-modal" -->
-    <!-- Include:
+      <!-- TODO: Add rating modal (stretch goal - initially hidden) -->
+      <!-- Give it an id like "rating-modal" -->
+      <!-- Include:
              - Rating message
              - 5 star buttons or rating input
              - Submit rating button
         -->
+    </main>
 
     <script src="script.js" type="module"></script>
   </body>
