@@ -3,15 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TODO: Add a title tag with "TechHub - Premium Gadgets" -->
-    
-    
-    <!-- TODO: Add a meta description tag with content: "Shop premium tech gadgets including iPhone, AirPods, and Apple Watch. Fast delivery to your door." -->
-    
-    
-    <!-- TODO: Link your CSS file (index.css) using a <link> tag -->
-    
+    <title>TechHub - Premium Gadgets</title>
+    <meta name="description" content="Shop premium tech gadgets including iPhone, AirPods, and Apple Watch. Fast delivery to your door.">
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <!-- 
@@ -47,7 +41,7 @@
     -->
     
     <!-- Your main container here -->
-    
+    <main class="container">
       
       <!-- ============================================
            TASK 2: Build the Header Section
@@ -61,6 +55,10 @@
       -->
       
       <!-- Your header here -->
+      <header>
+        <h1>TechHub</h1>
+        <p>Premium gadgets, delivered to your door</p>
+      </header>
 
 
       <!-- ============================================
@@ -81,6 +79,10 @@
       -->
       
       <!-- Your products section here -->
+      <section class="products-container" id="products-list" aria-label="Available products">
+        <!-- Product cards will be dynamically inserted here by JavaScript -->
+        <!-- Each product should be wrapped in an <article> element -->
+      </section>
 
 
       <!-- ============================================
@@ -99,7 +101,8 @@
       -->
       
       <!-- Your cart aside here -->
-      
+      <aside class="cart-section" id="cart" aria-label="Shopping cart">
+        <h2 class="cart-title">Your Cart</h2>
         
         <!-- ============================================
              TASK 5: Create Cart Items Container
@@ -117,6 +120,9 @@
         -->
         
         <!-- Your cart items list here -->
+        <ul id="cart-items" class="cart-items-list" aria-live="polite">
+          <!-- Cart items dynamically inserted here as <li> elements -->
+        </ul>
 
 
         <!-- ============================================
@@ -138,6 +144,10 @@
         -->
         
         <!-- Your cart total here -->
+        <div class="cart-total">
+          <span class="cart-total-label">Total</span>
+          <span class="cart-total-price" id="total-price" aria-label="Cart total">$0</span>
+        </div>
 
 
         <!-- ============================================
@@ -154,19 +164,26 @@
         -->
         
         <!-- Your checkout button here -->
+        <button class="checkout-btn" id="checkout-btn" type="button" aria-label="Proceed to checkout">
+          Complete Order
+        </button>
 
-      <!-- End of cart section - make sure to close the <aside> tag -->
+      </aside>
+      <!-- End of cart section -->
 
-    <!-- End of main container - make sure to close the <main> tag -->
+    </main>
+    <!-- End of main container -->
 
 
     <!-- ============================================
          TASK 8: BONUS - Create Payment Modal
          ============================================
          Use a <dialog> element for the payment modal (modern semantic HTML).
+         If <dialog> is not supported, fallback to <div> with role="dialog".
          
          TODO: After the main container (but still inside <body>), create:
          
+         Option A (Modern - Recommended):
          1. A <dialog> element with:
             - id="payment-modal"
             - class="modal"
@@ -179,68 +196,65 @@
             - id="payment-form"
             - method="dialog"
          
-         4. Inside the form, add these elements IN ORDER:
-         
-            a) <h3> with:
-               - id="modal-title"
-               - class="modal-title"
-               - Text: "Enter Payment Details"
-            
-            b) <label> with:
-               - for="card-name"
-               - class="visually-hidden"
-               - Text: "Full Name"
-            
-            c) <input> with:
-               - type="text"
-               - id="card-name"
-               - name="card-name"
-               - placeholder="Enter your name"
-               - aria-label="Cardholder name"
-               - required
-            
-            d) <label> with:
-               - for="card-number"
-               - class="visually-hidden"
-               - Text: "Card Number"
-            
-            e) <input> with:
-               - type="text"
-               - id="card-number"
-               - name="card-number"
-               - placeholder="Enter card number"
-               - aria-label="Card number"
-               - inputmode="numeric"
-               - pattern="[0-9\s]*"
-               - maxlength="19"
-               - required
-            
-            f) <label> with:
-               - for="card-cvv"
-               - class="visually-hidden"
-               - Text: "CVV"
-            
-            g) <input> with:
-               - type="text"
-               - id="card-cvv"
-               - name="card-cvv"
-               - placeholder="Enter CVV"
-               - aria-label="Card security code"
-               - inputmode="numeric"
-               - pattern="[0-9]*"
-               - maxlength="4"
-               - required
-            
-            h) <button> with:
-               - class="modal-btn"
-               - id="pay-btn"
-               - type="submit"
-               - Text: "Pay"
+         4. Inside the form, add:
+            - <h3> with id="modal-title", class="modal-title", text "Enter Payment Details"
+            - <label> for "card-name" with text "Full Name"
+            - <input> with type="text", id="card-name", name="card-name", placeholder="Enter your name", required
+            - <label> for "card-number" with text "Card Number"
+            - <input> with type="text", id="card-number", name="card-number", placeholder="Enter card number", required
+            - <label> for "card-cvv" with text "CVV"
+            - <input> with type="text", id="card-cvv", name="card-cvv", placeholder="Enter CVV", required
+            - <button> with class="modal-btn", id="pay-btn", type="submit", text "Pay"
          
          Note: The <dialog> element provides built-in accessibility features!
     -->
     
     <!-- Your payment modal here (BONUS) -->
+    <dialog id="payment-modal" class="modal" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <form id="payment-form" method="dialog">
+          <h3 id="modal-title" class="modal-title">Enter Payment Details</h3>
+          
+          <label for="card-name" class="visually-hidden">Full Name</label>
+          <input 
+            type="text" 
+            id="card-name" 
+            name="card-name" 
+            placeholder="Enter your name" 
+            aria-label="Cardholder name"
+            required
+          >
+          
+          <label for="card-number" class="visually-hidden">Card Number</label>
+          <input 
+            type="text" 
+            id="card-number" 
+            name="card-number" 
+            placeholder="Enter card number"
+            aria-label="Card number"
+            inputmode="numeric"
+            pattern="[0-9\s]*"
+            maxlength="19"
+            required
+          >
+          
+          <label for="card-cvv" class="visually-hidden">CVV</label>
+          <input 
+            type="text" 
+            id="card-cvv" 
+            name="card-cvv" 
+            placeholder="Enter CVV"
+            aria-label="Card security code"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            maxlength="4"
+            required
+          >
+          
+          <button class="modal-btn" id="pay-btn" type="submit">Pay</button>
+        </form>
+      </div>
+    </dialog>
 
 
     <!-- ============================================
@@ -256,6 +270,8 @@
     -->
     
     <!-- Your script tags here -->
+    <script src="data.js"></script>
+    <script src="index.js"></script>
     
   </body>
 </html>

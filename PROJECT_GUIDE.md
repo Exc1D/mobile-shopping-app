@@ -5,6 +5,7 @@ A solo project for Scrimba's Essential JavaScript Mini Projects Module, transfor
 ## 📱 Project Overview
 
 Transform a restaurant menu app into a sleek, modern gadget shop with iOS-inspired design. This project will help you practice:
+
 - DOM manipulation
 - Event listeners
 - Array methods
@@ -14,6 +15,7 @@ Transform a restaurant menu app into a sleek, modern gadget shop with iOS-inspir
 ## 🎯 Learning Objectives
 
 By completing this project, you will:
+
 - ✅ Render dynamic content from arrays
 - ✅ Handle user interactions with event listeners
 - ✅ Manage application state (cart data)
@@ -24,6 +26,7 @@ By completing this project, you will:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Basic knowledge of HTML, CSS, and JavaScript
 - Understanding of arrays and objects
 - Familiarity with DOM manipulation
@@ -31,22 +34,25 @@ By completing this project, you will:
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
-2. Start the development server:
+1. Start the development server:
+
 ```bash
 npm start
 ```
 
-3. Open your browser and start coding!
+1. Open your browser and start coding!
 
 ## 📋 Task Checklist
 
 Follow these tasks in `index.js` to complete the project:
 
 ### Core Features (Required)
+
 - [ ] **Task 1**: Access the gadgets data from `data.js`
 - [ ] **Task 2**: Set up global variables (cart array)
 - [ ] **Task 3**: Get DOM element references
@@ -59,6 +65,7 @@ Follow these tasks in `index.js` to complete the project:
 - [ ] **Task 10**: Initialize the app by calling `renderProducts()`
 
 ### Bonus Features (Optional)
+
 - [ ] **Bonus 1**: Implement payment modal with form validation
 - [ ] **Bonus 2**: Add quantity counter for products
 - [ ] **Bonus 3**: Save cart to localStorage
@@ -69,6 +76,7 @@ Follow these tasks in `index.js` to complete the project:
 ## 🎨 Design Features
 
 ### iOS-Inspired Elements
+
 - **SF Pro Font Family**: Authentic iOS typography
 - **Card-based Layout**: Rounded corners and subtle shadows
 - **Color System**: iOS-inspired color palette with CSS variables
@@ -77,12 +85,12 @@ Follow these tasks in `index.js` to complete the project:
 - **Gradient Header**: Eye-catching purple gradient
 
 ### Color Palette
+
 ```css
---ios-bg: #F2F2F7         /* Background gray */
---ios-card-bg: #FFFFFF    /* Pure white cards */
---ios-accent: #007AFF     /* iOS blue */
---ios-text-primary: #000  /* Black text */
---ios-text-secondary: #8E8E93 /* Gray text */
+--ios-bg: #f2f2f7 /* Background gray */ --ios-card-bg: #ffffff
+  /* Pure white cards */ --ios-accent: #007aff /* iOS blue */
+  --ios-text-primary: #000 /* Black text */ --ios-text-secondary: #8e8e93
+  /* Gray text */;
 ```
 
 ## 📁 File Structure
@@ -99,45 +107,49 @@ Follow these tasks in `index.js` to complete the project:
 ## 💡 Key Concepts to Practice
 
 ### 1. Array Methods
+
 ```javascript
 // map() - Transform data
-gadgetsArray.map(product => `<div>${product.name}</div>`)
+gadgetsArray.map((product) => `<div>${product.name}</div>`);
 
 // forEach() - Loop through items
-cart.forEach(item => console.log(item))
+cart.forEach((item) => console.log(item));
 
 // find() - Find specific item
-gadgetsArray.find(product => product.id === 0)
+gadgetsArray.find((product) => product.id === 0);
 
 // reduce() - Calculate totals
-cart.reduce((total, item) => total + item.price, 0)
+cart.reduce((total, item) => total + item.price, 0);
 ```
 
 ### 2. Template Literals
+
 ```javascript
 const html = `
   <div class="product-card">
     <div class="product-emoji">${product.emoji}</div>
     <h3>${product.name}</h3>
   </div>
-`
+`;
 ```
 
 ### 3. Event Listeners
+
 ```javascript
-button.addEventListener('click', function() {
+button.addEventListener("click", function () {
   // Handle click
-})
+});
 ```
 
 ### 4. DOM Manipulation
+
 ```javascript
 // Update content
-element.innerHTML = 'New content'
+element.innerHTML = "New content";
 
 // Show/hide elements
-element.classList.add('show')
-element.classList.remove('show')
+element.classList.add("show");
+element.classList.remove("show");
 ```
 
 ## 🔍 Debugging Tips
@@ -146,12 +158,10 @@ element.classList.remove('show')
    - Check variable values
    - Track function execution
    - Debug array contents
-
 2. **Browser DevTools**
    - Inspect elements
    - View console errors
    - Use debugger breakpoints
-
 3. **Common Issues**
    - Check element IDs match between HTML and JS
    - Verify array data structure
@@ -160,6 +170,7 @@ element.classList.remove('show')
 ## 🌟 Success Criteria
 
 Your app should:
+
 - ✅ Display all products from the data array
 - ✅ Add products to cart when clicking "Add" button
 - ✅ Show cart section when items are added
@@ -178,6 +189,7 @@ Your app should:
 ## 🚀 Next Steps
 
 After completing the core features:
+
 1. Add more products to `data.js`
 2. Implement the bonus features
 3. Customize the design colors

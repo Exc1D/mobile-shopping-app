@@ -43,7 +43,15 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - --ios-shadow: rgba(0, 0, 0, 0.1) (subtle shadow)
 */
 
-/* Your :root variables here */
+:root {
+  --ios-bg: #f2f2f7;
+  --ios-card-bg: #ffffff;
+  --ios-text-primary: #000000;
+  --ios-text-secondary: #8e8e93;
+  --ios-accent: #007aff;
+  --ios-border: #c6c6c8;
+  --ios-shadow: rgba(0, 0, 0, 0.1);
+}
 
 /* ============================================
    TASK 2: Reset Default Styles
@@ -56,7 +64,11 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - box-sizing: border-box
 */
 
-/* Your universal reset here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* ============================================
    TASK 3: Style the Body Element
@@ -71,7 +83,14 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - line-height: 1.5
 */
 
-/* Your body styles here */
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  background-color: var(--ios-bg);
+  color: var(--ios-text-primary);
+  line-height: 1.5;
+}
 
 /* ============================================
    TASK 4: Create Main Container
@@ -86,7 +105,12 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - background-color: var(--ios-bg)
 */
 
-/* Your main.container styles here */
+main.container {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--ios-bg);
+}
 
 /* ============================================
    TASK 5: Style the Header Section
@@ -111,11 +135,25 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - opacity: 0.9
 */
 
-/* Your header styles here */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60px 20px 30px;
+  color: white;
+  text-align: center;
+}
 
-/* Your header h1 styles here */
+header h1 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
 
-/* Your header p styles here */
+header p {
+  font-size: 17px;
+  font-weight: 400;
+  opacity: 0.9;
+}
 
 /* ============================================
    TASK 6: Style Products Section
@@ -127,7 +165,9 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - padding: 20px
 */
 
-/* Your section.products-container styles here */
+section.products-container {
+  padding: 20px;
+}
 
 /* ============================================
    TASK 7: Create Product Card Styles
@@ -147,7 +187,19 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - transition: transform 0.2s ease, box-shadow 0.2s ease
 */
 
-/* Your .product-card styles here */
+.product-card {
+  background-color: var(--ios-card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px var(--ios-shadow);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
 
 /* ============================================
    TASK 8: Add Product Card Hover Effect
@@ -159,7 +211,10 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - box-shadow: 0 4px 12px var(--ios-shadow)
 */
 
-/* Your .product-card:hover styles here */
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--ios-shadow);
+}
 
 /* ============================================
    TASK 9: Style Product Emoji/Icon
@@ -171,7 +226,10 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - flex-shrink: 0
 */
 
-/* Your .product-emoji styles here */
+.product-emoji {
+  font-size: 48px;
+  flex-shrink: 0;
+}
 
 /* ============================================
    TASK 10: Style Product Information Section
@@ -198,13 +256,26 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - font-weight: 500
 */
 
-/* Your .product-info styles here */
+.product-info {
+  flex: 1;
+}
 
-/* Your .product-name styles here */
+.product-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
 
-/* Your .product-specs styles here */
+.product-specs {
+  font-size: 14px;
+  color: var(--ios-text-secondary);
+  margin-bottom: 8px;
+}
 
-/* Your .product-price styles here */
+.product-price {
+  font-size: 17px;
+  font-weight: 500;
+}
 
 /* ============================================
    TASK 11: Style the Add to Cart Button
@@ -229,11 +300,25 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - opacity: 0.6
 */
 
-/* Your .add-btn styles here */
+.add-btn {
+  background-color: var(--ios-accent);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
 
-/* Your .add-btn:hover styles here */
+.add-btn:hover {
+  opacity: 0.8;
+}
 
-/* Your .add-btn:active styles here */
+.add-btn:active {
+  opacity: 0.6;
+}
 
 /* ============================================
    TASK 12: Create Cart Aside Styles
@@ -258,11 +343,24 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - margin-bottom: 16px
 */
 
-/* Your aside.cart-section styles here */
+aside.cart-section {
+  background-color: var(--ios-card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 8px var(--ios-shadow);
+  display: none;
+}
 
-/* Your aside.cart-section.show styles here */
+aside.cart-section.show {
+  display: block;
+}
 
-/* Your .cart-title styles here */
+.cart-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
 
 /* ============================================
    TASK 13: Style Cart Items List
@@ -304,17 +402,42 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - font-weight: 600
 */
 
-/* Your ul.cart-items-list styles here */
+ul.cart-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-/* Your .cart-item styles here */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--ios-border);
+}
 
-/* Your .cart-item:last-child styles here */
+.cart-item:last-child {
+  border-bottom: none;
+}
 
-/* Your .cart-item-name styles here */
+.cart-item-name {
+  font-size: 17px;
+  font-weight: 500;
+}
 
-/* Your .cart-item-remove styles here */
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: var(--ios-text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
 
-/* Your .cart-item-price styles here */
+.cart-item-price {
+  font-size: 17px;
+  font-weight: 600;
+}
 
 /* ============================================
    TASK 14: Style Cart Total Section
@@ -341,11 +464,25 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - color: var(--ios-accent)
 */
 
-/* Your .cart-total styles here */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 2px solid var(--ios-border);
+  margin-top: 12px;
+}
 
-/* Your .cart-total-label styles here */
+.cart-total-label {
+  font-size: 20px;
+  font-weight: 700;
+}
 
-/* Your .cart-total-price styles here */
+.cart-total-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ios-accent);
+}
 
 /* ============================================
    TASK 15: Style Checkout Button
@@ -372,11 +509,27 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - opacity: 0.7
 */
 
-/* Your .checkout-btn styles here */
+.checkout-btn {
+  width: 100%;
+  background-color: #34c759;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
 
-/* Your .checkout-btn:hover styles here */
+.checkout-btn:hover {
+  opacity: 0.9;
+}
 
-/* Your .checkout-btn:active styles here */
+.checkout-btn:active {
+  opacity: 0.7;
+}
 
 /* ============================================
    TASK 16: BONUS - Create Payment Dialog/Modal
@@ -400,7 +553,7 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - backdrop-filter: blur(10px)
    
    For fallback <div> (if using .modal class):
-   .modal:not(dialog):
+   .modal (when not open):
    - display: none
    - position: fixed
    - top: 0
@@ -421,7 +574,7 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - border-radius: 16px
    - padding: 24px
    - max-width: 340px
-   - width: 100%
+   - width: 90%
    
    .modal-title:
    - font-size: 22px
@@ -450,21 +603,78 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - cursor: pointer
 */
 
-/* Your dialog.modal styles here (BONUS) */
+/* Modern dialog element styles */
+dialog.modal {
+  border: none;
+  padding: 0;
+  max-width: 340px;
+  width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
 
-/* Your dialog.modal::backdrop styles here (BONUS) */
+dialog.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
 
-/* Your .modal:not(dialog) fallback styles here (BONUS) */
+/* Fallback for browsers that don't support dialog */
+.modal:not(dialog) {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Your .modal[open] and .modal.show styles here (BONUS) */
+.modal[open],
+.modal.show {
+  display: flex;
+}
 
-/* Your .modal-content styles here (BONUS) */
+.modal-content {
+  background-color: var(--ios-card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 340px;
+  width: 100%;
+}
 
-/* Your .modal-title styles here (BONUS) */
+.modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
 
-/* Your .modal input and .modal-content input styles here (BONUS) */
+.modal input,
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--ios-border);
+  border-radius: 8px;
+  font-size: 17px;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
 
-/* Your .modal-btn styles here (BONUS) */
+.modal-btn {
+  width: 100%;
+  background-color: var(--ios-accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 /* ============================================
    TASK 17: Add Accessibility Helpers
@@ -483,7 +693,17 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    - border: 0
 */
 
-/* Your .visually-hidden styles here (for accessibility) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* ============================================
    TASK 18: BONUS - Add Responsive Design
@@ -501,4 +721,12 @@ like <main>, <section>, <aside>, <article>, and <dialog>!
    }
 */
 
-/* Your responsive media query here (BONUS) */
+@media (min-width: 768px) {
+  .product-card {
+    padding: 20px;
+  }
+
+  .product-emoji {
+    font-size: 64px;
+  }
+}

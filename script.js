@@ -13,6 +13,7 @@ TODO LIST - Complete these tasks in order:
    - Create a function to render all products from the array
    - Use array methods (map, forEach, etc.)
    - Display: emoji, name, specs, price, and add button
+   - IMPORTANT: Wrap each product in an <article> element with class="product-card"
    - Add event listeners to the "Add to Cart" buttons
 
 3. ✅ CART FUNCTIONALITY
@@ -28,7 +29,7 @@ TODO LIST - Complete these tasks in order:
 
 5. ✅ CHECKOUT FLOW
    - Handle checkout button click
-   - Show payment modal (bonus feature)
+   - Show payment dialog/modal (bonus feature)
    - Process payment and show confirmation
    - Clear cart after successful payment
 
@@ -38,175 +39,294 @@ TODO LIST - Complete these tasks in order:
    - Add product search/filter functionality
    - Add animations and transitions
    - Implement form validation for payment
+   - Use the modern <dialog> element for the modal
 
+===========================================
+NOTE: This project now uses semantic HTML!
+- Products are wrapped in <article> elements
+- Cart items are <li> elements in a <ul>
+- The modal uses the <dialog> element
 ===========================================
 */
 
-// TODO 1: Get the gadgets data (uncomment one of these options)
-// Option A: If using modules, import the data
-// import gadgetsArray from './data.js'
+// ============================================
+// TODO 1: Get the gadgets data
+// ============================================
+// The gadgetsArray is available from data.js (loaded via script tag)
+// You can use it directly - no need to import
 
-// Option B: If data.js is loaded via script tag, it's already available as gadgetsArray
-// You can use gadgetsArray directly
+// Hint: Try console.log(gadgetsArray) to see the data structure
 
+// ============================================
 // TODO 2: Set up global variables
+// ============================================
 // Create an empty array to store cart items
-let cart = [];
 
+// Your cart array here
+
+// ============================================
 // TODO 3: Get references to important DOM elements
-// Hint: Use document.getElementById() or document.querySelector()
-const productsList = document.getElementById("products-list");
-const cartSection = document.getElementById("cart");
-const cartItemsContainer = document.getElementById("cart-items");
-const totalPriceElement = document.getElementById("total-price");
-const checkoutBtn = document.getElementById("checkout-btn");
-const paymentModal = document.getElementById("payment-modal");
-const payBtn = document.getElementById("pay-btn");
+// ============================================
+// Use document.getElementById() or document.querySelector()
+// to get references to these elements:
+// - productsList (id: "products-list")
+// - cartSection (id: "cart")
+// - cartItemsContainer (id: "cart-items")
+// - totalPriceElement (id: "total-price")
+// - checkoutBtn (id: "checkout-btn")
+// - paymentModal (id: "payment-modal")
+// - payBtn (id: "pay-btn")
 
+// Your DOM element references here
+
+// ============================================
 // TODO 4: Create a function to render products
+// ============================================
 // This function should:
-// - Loop through gadgetsArray
-// - Create HTML for each product
-// - Add to the DOM
-// - Set up event listeners for "Add to Cart" buttons
+// 1. Loop through gadgetsArray (use map or forEach)
+// 2. Create HTML for each product wrapped in <article> element
+// 3. Insert the HTML into the products list container
+// 4. Set up event listeners for the "Add to Cart" buttons
 
-function renderProducts() {
-  // Your code here
-  // Hint: Use array.map() or forEach() to create HTML for each product
-  // Template literal example:
-  // `<div class="product-card">
-  //     <div class="product-emoji">${product.emoji}</div>
-  //     ...
-  //  </div>`
-  // Don't forget to add event listeners to the buttons!
-}
+// IMPORTANT: Each product should be wrapped in an <article> element!
+// HTML structure example:
+// <article class="product-card">
+//     <div class="product-emoji">${product.emoji}</div>
+//     <div class="product-info">
+//         <h3 class="product-name">${product.name}</h3>
+//         <p class="product-specs">${product.specs.join(', ')}</p>
+//         <p class="product-price">$${product.price}</p>
+//     </div>
+//     <button class="add-btn" data-id="${product.id}">Add</button>
+// </article>
 
+// Your renderProducts function here
+
+// ============================================
 // TODO 5: Create a function to add item to cart
+// ============================================
 // This function should:
-// - Take a product ID as parameter
-// - Find the product in gadgetsArray
-// - Add it to the cart array
-// - Call renderCart() to update the display
+// 1. Take a product ID as parameter
+// 2. Find the product in gadgetsArray using array.find()
+// 3. Add the product to the cart array
+// 4. Call renderCart() to update the display
 
-function addToCart(productId) {
-  // Your code here
-  // Hint: Use array.find() to get the product
-  // Push the product to the cart array
-  // Call renderCart()
-}
+// Hint: Use array.find() like this:
+// const product = gadgetsArray.find(item => item.id === productId);
 
+// Your addToCart function here
+
+// ============================================
 // TODO 6: Create a function to render the cart
+// ============================================
 // This function should:
-// - Show the cart section
-// - Loop through cart items
-// - Display each item with name, price, and remove button
-// - Calculate and display total price
+// 1. Show the cart section (add 'show' class)
+// 2. Clear any previous cart items
+// 3. Loop through cart array and create HTML for each item
+// 4. Each cart item should be an <li> element
+// 5. Calculate the total price
+// 6. Update the total price display
+// 7. If cart is empty, hide the cart section
 
-function renderCart() {
-  // Your code here
-  // Show cart section
-  // cartSection.classList.add('show');
-  // Clear previous cart items
-  // cartItemsContainer.innerHTML = '';
-  // Loop through cart and create HTML for each item
-  // Calculate total price
-  // Hint: Use array.reduce() to sum up prices
-  // Update total price display
-}
+// IMPORTANT: Each cart item should be an <li> element!
+// HTML structure example:
+// <li class="cart-item">
+//     <span class="cart-item-name">${item.name}</span>
+//     <button class="cart-item-remove" data-index="${index}">remove</button>
+//     <span class="cart-item-price">$${item.price}</span>
+// </li>
 
+// Your renderCart function here
+
+// ============================================
 // TODO 7: Create a function to remove item from cart
+// ============================================
 // This function should:
-// - Take an item index as parameter
-// - Remove item from cart array
-// - Re-render the cart
-// - Hide cart if empty
+// 1. Take an item index as parameter
+// 2. Remove the item from cart array using splice()
+// 3. Call renderCart() to update the display
 
-function removeFromCart(index) {
-  // Your code here
-  // Hint: Use array.splice(index, 1)
-  // Call renderCart()
-  // If cart is empty, hide cart section
-}
+// Hint: Use array.splice(index, 1) to remove one item at the given index
 
+// Your removeFromCart function here
+
+// ============================================
 // TODO 8: Create a function to calculate total price
+// ============================================
 // This function should:
-// - Loop through cart items
-// - Sum up all prices
-// - Return the total
+// 1. Loop through cart items
+// 2. Sum up all the prices
+// 3. Return the total
 
-function calculateTotal() {
-  // Your code here
-  // Hint: Use array.reduce()
-  // return cart.reduce((total, item) => total + item.price, 0);
-}
+// Hint: Use array.reduce() like this:
+// return cart.reduce((total, item) => total + item.price, 0);
 
+// Your calculateTotal function here
+
+// ============================================
 // TODO 9: Set up checkout button event listener
-// When clicked:
-// - Show payment modal (bonus)
-// - Or process order directly
+// ============================================
+// When the checkout button is clicked:
+// - Show the payment modal (BONUS: use dialog.showModal() for modern approach)
+// - Or show a simple alert with order confirmation
 
-checkoutBtn.addEventListener("click", function () {
-  // Your code here
-  // Show modal: paymentModal.classList.add('show');
-  // Or show a simple alert with order confirmation
-});
+// MODERN APPROACH (recommended if you built the dialog element):
+// Use: paymentModal.showModal();
 
+// FALLBACK APPROACH (if using div with .modal class):
+// Use: paymentModal.classList.add('show');
+
+// Your checkout button event listener here
+
+// ============================================
 // TODO 10: BONUS - Set up payment modal functionality
-// When pay button is clicked:
-// - Get form values
-// - Validate inputs
-// - Show success message
-// - Clear cart
-// - Hide modal
+// ============================================
+// When the pay button is clicked:
+// 1. Prevent default form submission (if using a form)
+// 2. Get the form input values (card name, number, CVV)
+// 3. Validate that all fields are filled
+// 4. Show a success message
+// 5. Clear the cart array
+// 6. Call renderCart() to update the display
+// 7. Close the modal
+// 8. Reset the form
 
-payBtn.addEventListener("click", function () {
-  // Your code here
-  // Get input values
-  // const cardName = document.getElementById('card-name').value;
-  // Validate
-  // if (!cardName) { alert('Please enter your name'); return; }
-  // Show success message
-  // alert(`Thanks ${cardName}! Your order is on its way!`);
-  // Clear cart and close modal
-});
+// MODERN APPROACH (for dialog element):
+// Use: paymentModal.close();
 
+// FALLBACK APPROACH (for div modal):
+// Use: paymentModal.classList.remove('show');
+
+// Your payment modal event listener here
+
+// ============================================
+// BONUS: Close modal when clicking outside (for div-based modals)
+// ============================================
+// Add a click listener to the modal that closes it
+// when clicking on the backdrop (not the content)
+
+// Your modal backdrop click listener here (optional)
+
+// ============================================
 // TODO 11: Initialize the app
-// Call renderProducts() when page loads
+// ============================================
+// Call renderProducts() when the page loads
+// This will display all the products
 
-// Your code here
-// renderProducts();
+// Your initialization code here
 
 /* 
 ===========================================
-TIPS & HINTS:
+TIPS & HINTS FOR SUCCESS:
 ===========================================
 
-1. Array Methods You'll Need:
-   - map() - to transform data
-   - forEach() - to loop through items
-   - find() - to find a specific item
-   - filter() - to filter items
-   - reduce() - to calculate totals
+1. ARRAY METHODS YOU'LL NEED:
+   --------------------------------
+   map() - Transform data into HTML
+   Example: gadgetsArray.map(product => `<div>${product.name}</div>`)
+   
+   forEach() - Loop through items
+   Example: cart.forEach(item => console.log(item))
+   
+   find() - Find a specific item
+   Example: gadgetsArray.find(product => product.id === 0)
+   
+   reduce() - Calculate totals
+   Example: cart.reduce((total, item) => total + item.price, 0)
+   
+   splice() - Remove items from array
+   Example: cart.splice(index, 1)
 
-2. DOM Manipulation:
-   - innerHTML - to insert HTML
-   - addEventListener() - to handle clicks
-   - classList.add/remove() - to show/hide elements
+2. DOM MANIPULATION:
+   --------------------------------
+   Get element: document.getElementById('id')
+   Set HTML: element.innerHTML = 'content'
+   Add class: element.classList.add('class-name')
+   Remove class: element.classList.remove('class-name')
+   Add listener: element.addEventListener('click', function)
 
-3. Template Literals:
-   - Use backticks `` for multi-line HTML
-   - Use ${variable} to insert values
+3. TEMPLATE LITERALS:
+   --------------------------------
+   Use backticks `` for multi-line HTML
+   Use ${variable} to insert values
+   Example:
+   const html = `
+     <div class="card">
+       <h3>${product.name}</h3>
+       <p>$${product.price}</p>
+     </div>
+   `
 
-4. Event Delegation:
-   - Consider adding one listener to parent instead of many to children
-   - Use event.target to identify which element was clicked
+4. SEMANTIC HTML STRUCTURE:
+   --------------------------------
+   Products: <article class="product-card">...</article>
+   Cart Items: <li class="cart-item">...</li>
+   Modal: <dialog id="payment-modal">...</dialog>
 
-5. Debugging:
-   - Use console.log() to check your variables
-   - Check the browser console for errors
-   - Use debugger; to pause code execution
+5. DIALOG ELEMENT (Modern):
+   --------------------------------
+   Open: dialog.showModal()
+   Close: dialog.close()
+   Backdrop: Automatically created by browser
+
+6. EVENT DELEGATION (Advanced):
+   --------------------------------
+   Instead of adding listeners to each button,
+   add ONE listener to the parent:
+   
+   productsList.addEventListener('click', function(e) {
+     if (e.target.classList.contains('add-btn')) {
+       const id = parseInt(e.target.dataset.id);
+       addToCart(id);
+     }
+   });
+
+7. DEBUGGING TIPS:
+   --------------------------------
+   - Use console.log() to check values
+   - Check browser console for errors (F12)
+   - Use console.table(cart) to see cart contents
+   - Add debugger; to pause code execution
+   - Check that IDs and classes match HTML
+
+8. COMMON MISTAKES TO AVOID:
+   --------------------------------
+   - Forgetting to call functions (renderProducts, renderCart)
+   - Not converting data-id to number: parseInt(e.target.dataset.id)
+   - Forgetting to check if cart is empty before hiding
+   - Not adding event listeners after rendering HTML
+   - Misspelling class names or IDs
+
+9. RECOMMENDED ORDER:
+   --------------------------------
+   1. Set up variables and get DOM elements
+   2. Create and call renderProducts()
+   3. Create addToCart() and test it
+   4. Create renderCart() and test it
+   5. Create calculateTotal() and use it in renderCart()
+   6. Create removeFromCart() and test it
+   7. Add checkout functionality
+   8. BONUS: Add payment modal
+
+10. TESTING AS YOU GO:
+    --------------------------------
+    After each function:
+    - Save your file
+    - Refresh the browser
+    - Open the console (F12)
+    - Test the functionality
+    - Fix any errors before moving on
 
 ===========================================
-GOOD LUCK! 🚀
+YOU'VE GOT THIS! 🚀
 ===========================================
+
+Remember:
+- Read the task comments carefully
+- Build one function at a time
+- Test after each step
+- Use console.log() liberally
+- Don't be afraid to experiment!
+
+Good luck with your project!
 */
