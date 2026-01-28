@@ -14,27 +14,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- 
-    ============================================
-    HTML STRUCTURE TASKS - Complete these in order
-    ============================================
-    
-    TASK 1: Create the main container
-    TASK 2: Build the header section
-    TASK 3: Create the products section
-    TASK 4: Build the cart section (aside element)
-    TASK 5: Create cart items container
-    TASK 6: Add cart total display
-    TASK 7: Add checkout button
-    TASK 8: BONUS - Create payment modal dialog
-    TASK 9: Link JavaScript files
-    
-    ============================================
-    NOTE: This HTML uses semantic elements like <main>, <header>, <section>, 
-    <aside>, <article>, and <dialog> for better accessibility and SEO!
-    ============================================
-    -->
-
     <main class="container">
       <header>
         <h1>EXXEED Gadgets</h1>
@@ -62,21 +41,6 @@
             >$0</span
           >
         </div>
-
-        <!-- ============================================
-             TASK 7: Add Checkout Button
-             ============================================
-             Create a button to complete the order.
-             
-             TODO: After the cart total, create a <button> with:
-             - class="checkout-btn"
-             - id="checkout-btn"
-             - type="button"
-             - aria-label="Proceed to checkout"
-             - Text content: "Complete Order"
-        -->
-
-        <!-- Your checkout button here -->
         <button
           class="checkout-btn"
           id="checkout-btn"
@@ -87,93 +51,47 @@
         </button>
       </aside>
     </main>
-
-    <!-- End of cart section - make sure to close the <aside> tag -->
-
-    <!-- End of main container - make sure to close the <main> tag -->
-
-    <!-- ============================================
-         TASK 8: BONUS - Create Payment Modal
-         ============================================
-         Use a <dialog> element for the payment modal (modern semantic HTML).
-         
-         TODO: After the main container (but still inside <body>), create:
-         
-         1. A <dialog> element with:
-            - id="payment-modal"
-            - class="modal"
-            - aria-labelledby="modal-title"
-         
-         2. Inside the dialog, create a <div> with:
-            - class="modal-content"
-         
-         3. Inside modal-content, create a <form> element with:
-            - id="payment-form"
-            - method="dialog"
-         
-         4. Inside the form, add these elements IN ORDER:
-         
-            a) <h3> with:
-               - id="modal-title"
-               - class="modal-title"
-               - Text: "Enter Payment Details"
-            
-            b) <label> with:
-               - for="card-name"
-               - class="visually-hidden"
-               - Text: "Full Name"
-            
-            c) <input> with:
-               - type="text"
-               - id="card-name"
-               - name="card-name"
-               - placeholder="Enter your name"
-               - aria-label="Cardholder name"
-               - required
-            
-            d) <label> with:
-               - for="card-number"
-               - class="visually-hidden"
-               - Text: "Card Number"
-            
-            e) <input> with:
-               - type="text"
-               - id="card-number"
-               - name="card-number"
-               - placeholder="Enter card number"
-               - aria-label="Card number"
-               - inputmode="numeric"
-               - pattern="[0-9\s]*"
-               - maxlength="19"
-               - required
-            
-            f) <label> with:
-               - for="card-cvv"
-               - class="visually-hidden"
-               - Text: "CVV"
-            
-            g) <input> with:
-               - type="text"
-               - id="card-cvv"
-               - name="card-cvv"
-               - placeholder="Enter CVV"
-               - aria-label="Card security code"
-               - inputmode="numeric"
-               - pattern="[0-9]*"
-               - maxlength="4"
-               - required
-            
-            h) <button> with:
-               - class="modal-btn"
-               - id="pay-btn"
-               - type="submit"
-               - Text: "Pay"
-         
-         Note: The <dialog> element provides built-in accessibility features!
-    -->
-
-    <!-- Your payment modal here (BONUS) -->
-    <dialog></dialog>
+    <dialog class="modal" id="payment-modal" aria-labelledby="modal-title">
+      <div clas="modal-content">
+        <form id="payment-form" method="dialog">
+          <h3 class="modal-title" id="modal-title">Enter Payment Details</h3>
+          <label for="card-name" class="visually-hidden">Full Name</label>
+          <input
+            type="text"
+            id="card-name"
+            name="card-name"
+            placeholder="(e.g. Steve Jobs)"
+            aria-label="Cardholder name"
+            required
+          />
+          <label for="card-number" class="visually-hidden">Card Number</label>
+          <input
+            type="text"
+            id="card-number"
+            name="card-number"
+            placeholder="(e.g. 1234 5678 910)"
+            aria-label="Card number"
+            inputmode="numeric"
+            pattern="[0-9]"
+            maxlength="19"
+            required
+          />
+          <label for="card-cvv" class="visually-hidden">CVV</label>
+          <input
+            type="text"
+            id="card-cvv"
+            name="card-cvv"
+            placeholder="(e.g. 1234)"
+            aria-label="Card security code"
+            inputmode="numeric"
+            pattern="[0-9]"
+            maxlength="4"
+            required
+          />
+          <button class="modal-btn" id="pay-btn" type="submit">Pay</button>
+        </form>
+      </div>
+    </dialog>
     <script type="module" src="script.js"></script>
   </body>
 </html>
