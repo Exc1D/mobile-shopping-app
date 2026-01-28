@@ -1,77 +1,408 @@
-/* TODO: Reset and base styles */
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #05070b 0%, #142130 100%);
-  /* Add background color, text color, etc. */
-}
+/* 
+===========================================
+CSS STYLING TASKS - Complete these in order
+===========================================
 
-main {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-}
-/* TODO: Container styles */
-/* Set max-width for mobile (e.g., 375px-414px) */
-/* Center the app */
-
-/* TODO: Header styles */
-/* Style the store name/logo */
-/* Style the cart icon and item count badge */
-
-/* TODO: Hero/Banner styles (optional) */
-/* Add promotional banner styling */
-
-/* TODO: Product card styles */
-/* Style each product card */
-/* Include:
-   - Card layout (flexbox or grid)
-   - Emoji/image sizing
-   - Product name typography
-   - Features list styling
-   - Price styling
-   - Add to cart button
+TASK 1: Set up CSS Variables for iOS Color Theme
+TASK 2: Reset default styles
+TASK 3: Style the body element
+TASK 4: Create the main container
+TASK 5: Style the header section
+TASK 6: Style the products container
+TASK 7: Create product card styles
+TASK 8: Style product card hover effects
+TASK 9: Style product emoji/icon
+TASK 10: Style product information section
+TASK 11: Style the "Add to Cart" button
+TASK 12: Create cart section styles
+TASK 13: Style cart items
+TASK 14: Style the cart total section
+TASK 15: Style the checkout button
+TASK 16: BONUS - Create modal styles for payment
+TASK 17: BONUS - Add responsive design
+===========================================
 */
 
-/* TODO: Button styles */
-/* Primary button (Add to cart, Checkout) */
-/* Secondary button (Remove, Cancel) */
-/* Button hover states */
+/* ============================================
+   TASK 1: Set up CSS Variables
+   ============================================
+   Create CSS custom properties (variables) for the iOS color theme.
+   This makes it easy to change colors throughout the app.
+   
+   TODO: Define the following color variables in :root
+   - --ios-bg: #F2F2F7 (light gray background)
+   - --ios-card-bg: #FFFFFF (white cards)
+   - --ios-text-primary: #000000 (black text)
+   - --ios-text-secondary: #8E8E93 (gray text)
+   - --ios-accent: #007AFF (iOS blue)
+   - --ios-border: #C6C6C8 (light border)
+   - --ios-shadow: rgba(0, 0, 0, 0.1) (subtle shadow)
+*/
 
-/* TODO: Cart section styles */
-/* Initially hidden (display: none or visibility) */
-/* Cart items list */
-/* Cart item individual styling */
-/* Remove button in cart */
+:root {
+  /* Your color variables here */
+}
 
-/* TODO: Price and total styles */
-/* Subtotal display */
-/* Discount display (if applied) */
-/* Total price (make it prominent) */
+/* ============================================
+   TASK 2: Reset Default Styles
+   ============================================
+   Remove default browser margins and padding for consistent styling.
+   
+   TODO: Select all elements (*) and set:
+   - margin: 0
+   - padding: 0
+   - box-sizing: border-box
+*/
 
-/* TODO: Modal styles */
-/* Modal overlay (dark background, position: fixed) */
-/* Modal content box (centered) */
-/* Close button (X or text) */
+/* Your universal reset here */
 
-/* TODO: Payment form styles */
-/* Input fields */
-/* Input focus states */
-/* Form button */
+/* ============================================
+   TASK 3: Style the Body Element
+   ============================================
+   Set up the base styles for the entire page.
+   
+   TODO: Style the body element with:
+   - margin: 0
+   - font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif
+   - background-color: var(--ios-bg)
+   - color: var(--ios-text-primary)
+   - line-height: 1.5
+*/
 
-/* TODO: Discount modal styles (stretch goal) */
-/* Promo code display */
-/* Apply discount button */
+/* Your body styles here */
 
-/* TODO: Rating modal styles (stretch goal) */
-/* Star rating buttons */
-/* Rating hover effects */
-/* Submit rating button */
+/* ============================================
+   TASK 4: Create Main Container
+   ============================================
+   Create a centered container that limits width on large screens.
+   
+   TODO: Style .container with:
+   - max-width: 430px (iPhone size)
+   - margin: 0 auto (center it)
+   - min-height: 100vh (full screen height)
+   - background-color: var(--ios-bg)
+*/
 
-/* TODO: Utility classes */
-/* .hidden { display: none; } */
-/* .show { display: block; } */
+/* Your container styles here */
 
-/* TODO: Responsive design (optional) */
-/* Add media queries for different screen sizes */
+/* ============================================
+   TASK 5: Style the Header Section
+   ============================================
+   Create an eye-catching header with gradient background.
+   
+   TODO: Style header element with:
+   - background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+   - padding: 60px 20px 30px
+   - color: white
+   - text-align: center
+   
+   Then style header h1 with:
+   - font-size: 34px
+   - font-weight: 700
+   - letter-spacing: -0.5px
+   - margin-bottom: 8px
+   
+   And header p with:
+   - font-size: 17px
+   - font-weight: 400
+   - opacity: 0.9
+*/
+
+/* Your header styles here */
+
+/* ============================================
+   TASK 6: Style Products Container
+   ============================================
+   Add padding around the products list.
+   
+   TODO: Style .products-container with:
+   - padding: 20px
+*/
+
+/* Your products container styles here */
+
+/* ============================================
+   TASK 7: Create Product Card Styles
+   ============================================
+   Design beautiful iOS-style cards for each product.
+   
+   TODO: Style .product-card with:
+   - background-color: var(--ios-card-bg)
+   - border-radius: 12px
+   - padding: 16px
+   - margin-bottom: 12px
+   - box-shadow: 0 2px 8px var(--ios-shadow)
+   - display: flex
+   - align-items: center
+   - gap: 16px
+   - transition: transform 0.2s ease, box-shadow 0.2s ease
+*/
+
+/* Your product card styles here */
+
+/* ============================================
+   TASK 8: Add Product Card Hover Effect
+   ============================================
+   Make cards lift slightly when hovering over them.
+   
+   TODO: Style .product-card:hover with:
+   - transform: translateY(-2px)
+   - box-shadow: 0 4px 12px var(--ios-shadow)
+*/
+
+/* Your hover effect here */
+
+/* ============================================
+   TASK 9: Style Product Emoji/Icon
+   ============================================
+   Make the emoji large and prevent it from shrinking.
+   
+   TODO: Style .product-emoji with:
+   - font-size: 48px
+   - flex-shrink: 0
+*/
+
+/* Your emoji styles here */
+
+/* ============================================
+   TASK 10: Style Product Information Section
+   ============================================
+   Style the product name, specs, and price.
+   
+   TODO: Style these classes:
+   
+   .product-info:
+   - flex: 1
+   
+   .product-name:
+   - font-size: 20px
+   - font-weight: 600
+   - margin-bottom: 4px
+   
+   .product-specs:
+   - font-size: 14px
+   - color: var(--ios-text-secondary)
+   - margin-bottom: 8px
+   
+   .product-price:
+   - font-size: 17px
+   - font-weight: 500
+*/
+
+/* Your product info styles here */
+
+/* ============================================
+   TASK 11: Style the Add to Cart Button
+   ============================================
+   Create a beautiful iOS-style button.
+   
+   TODO: Style .add-btn with:
+   - background-color: var(--ios-accent)
+   - color: white
+   - border: none
+   - border-radius: 20px
+   - padding: 8px 20px
+   - font-size: 15px
+   - font-weight: 600
+   - cursor: pointer
+   - transition: opacity 0.2s ease
+   
+   Add hover effect (.add-btn:hover):
+   - opacity: 0.8
+   
+   Add active effect (.add-btn:active):
+   - opacity: 0.6
+*/
+
+/* Your button styles here */
+
+/* ============================================
+   TASK 12: Create Cart Section Styles
+   ============================================
+   Style the cart area that appears when items are added.
+   
+   TODO: Style .cart-section with:
+   - background-color: var(--ios-card-bg)
+   - border-radius: 12px
+   - padding: 20px
+   - margin: 20px
+   - box-shadow: 0 2px 8px var(--ios-shadow)
+   - display: none (hidden by default)
+   
+   Create .cart-section.show to display it:
+   - display: block
+   
+   Style .cart-title:
+   - font-size: 22px
+   - font-weight: 700
+   - margin-bottom: 16px
+*/
+
+/* Your cart section styles here */
+
+/* ============================================
+   TASK 13: Style Cart Items
+   ============================================
+   Design how each item looks in the cart.
+   
+   TODO: Style these cart item classes:
+   
+   .cart-item:
+   - display: flex
+   - justify-content: space-between
+   - align-items: center
+   - padding: 12px 0
+   - border-bottom: 1px solid var(--ios-border)
+   
+   .cart-item:last-child:
+   - border-bottom: none
+   
+   .cart-item-name:
+   - font-size: 17px
+   - font-weight: 500
+   
+   .cart-item-remove:
+   - background: none
+   - border: none
+   - color: var(--ios-text-secondary)
+   - font-size: 14px
+   - cursor: pointer
+   - padding: 4px 8px
+   
+   .cart-item-price:
+   - font-size: 17px
+   - font-weight: 600
+*/
+
+/* Your cart item styles here */
+
+/* ============================================
+   TASK 14: Style Cart Total Section
+   ============================================
+   Display the total price prominently.
+   
+   TODO: Style these classes:
+   
+   .cart-total:
+   - display: flex
+   - justify-content: space-between
+   - align-items: center
+   - padding: 16px 0
+   - border-top: 2px solid var(--ios-border)
+   - margin-top: 12px
+   
+   .cart-total-label:
+   - font-size: 20px
+   - font-weight: 700
+   
+   .cart-total-price:
+   - font-size: 20px
+   - font-weight: 700
+   - color: var(--ios-accent)
+*/
+
+/* Your cart total styles here */
+
+/* ============================================
+   TASK 15: Style Checkout Button
+   ============================================
+   Create a prominent green checkout button.
+   
+   TODO: Style .checkout-btn with:
+   - width: 100%
+   - background-color: #34C759 (iOS green)
+   - color: white
+   - border: none
+   - border-radius: 12px
+   - padding: 16px
+   - font-size: 17px
+   - font-weight: 600
+   - cursor: pointer
+   - margin-top: 16px
+   - transition: opacity 0.2s ease
+   
+   Add hover (.checkout-btn:hover):
+   - opacity: 0.9
+   
+   Add active (.checkout-btn:active):
+   - opacity: 0.7
+*/
+
+/* Your checkout button styles here */
+
+/* ============================================
+   TASK 16: BONUS - Create Payment Modal
+   ============================================
+   Design a beautiful modal overlay for payment.
+   
+   TODO: Style these modal classes:
+   
+   .modal:
+   - display: none
+   - position: fixed
+   - top: 0
+   - left: 0
+   - width: 100%
+   - height: 100%
+   - background-color: rgba(0, 0, 0, 0.5)
+   - backdrop-filter: blur(10px)
+   - z-index: 1000
+   - align-items: center
+   - justify-content: center
+   
+   .modal.show:
+   - display: flex
+   
+   .modal-content:
+   - background-color: var(--ios-card-bg)
+   - border-radius: 16px
+   - padding: 24px
+   - max-width: 340px
+   - width: 90%
+   - box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3)
+   
+   .modal-title:
+   - font-size: 22px
+   - font-weight: 700
+   - margin-bottom: 16px
+   - text-align: center
+   
+   .modal input:
+   - width: 100%
+   - padding: 12px
+   - border: 1px solid var(--ios-border)
+   - border-radius: 8px
+   - font-size: 17px
+   - margin-bottom: 12px
+   
+   .modal-btn:
+   - width: 100%
+   - background-color: var(--ios-accent)
+   - color: white
+   - border: none
+   - border-radius: 12px
+   - padding: 14px
+   - font-size: 17px
+   - font-weight: 600
+   - cursor: pointer
+*/
+
+/* Your modal styles here (BONUS) */
+
+/* ============================================
+   TASK 17: BONUS - Add Responsive Design
+   ============================================
+   Make the app look great on larger screens.
+   
+   TODO: Add a media query for screens 768px and wider:
+   
+   @media (min-width: 768px) {
+       .product-card:
+       - padding: 20px
+       
+       .product-emoji:
+       - font-size: 64px
+   }
+*/
+
+/* Your responsive styles here (BONUS) */

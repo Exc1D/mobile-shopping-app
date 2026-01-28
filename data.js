@@ -1,37 +1,28 @@
-export const productsArray = [
+// TODO: This is your product data array - feel free to add more gadgets!
+const gadgetsArray = [
   {
-    name: "Wireless Headphones",
-    features: ["Bluetooth 5.0", "Noise Cancelling", "30hr Battery"],
+    name: "iPhone 15 Pro",
+    specs: ["A17 Pro chip", "Titanium design", "48MP camera"],
     id: 0,
-    price: 89,
-    emoji: "🎧",
+    price: 999,
+    emoji: "📱",
   },
   {
-    name: "Smart Watch",
-    features: ["Heart Rate Monitor", "GPS", "Waterproof"],
-    price: 199,
-    emoji: "⌚",
+    name: "AirPods Pro",
+    specs: ["Active noise cancellation", "Spatial audio", "USB-C charging"],
+    price: 249,
+    emoji: "🎧",
     id: 1,
   },
   {
-    name: "Portable Charger",
-    features: ["20000mAh", "Fast Charging", "Dual USB"],
-    price: 45,
-    emoji: "🔋",
+    name: "Apple Watch Ultra",
+    specs: ["49mm titanium case", "Action button", "Precision GPS"],
+    price: 799,
+    emoji: "⌚",
     id: 2,
   },
-  {
-    name: "Laptop Sleeve",
-    features: ["15-inch", "Water Resistant", "Premium Material"],
-    price: 35,
-    emoji: "💼",
-    id: 3,
-  },
-  {
-    name: "Webcam HD",
-    features: ["1080p", "Auto Focus", "Built-in Mic"],
-    price: 79,
-    emoji: "📷",
-    id: 4,
-  },
 ];
+
+// TODO: Export the array so it can be imported in index.js
+// Uncomment the line below when you're ready to use ES6 modules
+// export default gadgetsArray;

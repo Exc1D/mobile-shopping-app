@@ -1,93 +1,66 @@
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechShop - Your Tech Store</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <title>TechHub - Premium Gadgets</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- TODO: Add header section -->
-    <main>
+    <!-- TODO: Create the main container -->
+    <div class="container">
+      <!-- TODO: Create the header section with store name and tagline -->
       <header>
-        <div class="header-container">
-          <div class="shop-title">
-            <h1>EXXEED GADGETS</h1>
-            <p>Simple tech but fun!</p>
-          </div>
-        </div>
-        <span class="cart-btn">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </span>
+        <h1>TechHub</h1>
+        <p>Premium gadgets, delivered to your door</p>
       </header>
-      <!-- Include: Store name/logo, cart icon with item count -->
 
-      <!-- TODO: Add hero/banner section (optional) -->
-      <section class="promo-container"></section>
-      <!-- Include: Promotional message or featured product -->
+      <!-- TODO: Create the products container where product cards will be rendered -->
+      <div class="products-container" id="products-list">
+        <!-- Product cards will be dynamically inserted here by JavaScript -->
+      </div>
 
-      <section class="category-container">
-        <div class="categories">
-          <button>Gaming</button>
-          <button>Phones</button>
-          <button>Laptop</button>
-          <button>Sports</button>
+      <!-- TODO: Create the cart section (hidden by default, shown when items added) -->
+      <div class="cart-section" id="cart">
+        <h2 class="cart-title">Your Cart</h2>
+
+        <!-- TODO: Cart items will be rendered here -->
+        <div id="cart-items">
+          <!-- Cart items dynamically inserted here -->
         </div>
-      </section>
 
-      <!-- TODO: Add main container for products -->
-      <section class="products-container">
-        <div class="products" id="products">
-          <h2>Hot Sales</h2>
+        <!-- TODO: Display total price -->
+        <div class="cart-total">
+          <span class="cart-total-label">Total</span>
+          <span class="cart-total-price" id="total-price">$0</span>
         </div>
-      </section>
-      <!-- Give it an id like "products-container" -->
-      <!-- Products will be rendered here by JavaScript -->
 
-      <!-- TODO: Add cart section (initially hidden) -->
-      <!-- Give it an id like "cart-container" -->
-      <!-- Include: 
-             - Cart heading
-             - Cart items container (id="cart-items")
-             - Order total section
-             - Checkout button
-        -->
+        <!-- TODO: Add checkout button -->
+        <button class="checkout-btn" id="checkout-btn">Complete Order</button>
+      </div>
+    </div>
 
-      <!-- TODO: Add payment modal (initially hidden) -->
-      <!-- Give it an id like "payment-modal" -->
-      <!-- Include:
-             - Modal overlay
-             - Close button
-             - Form with:
-               - Name input (required)
-               - Card number input (required)
-               - Submit button
-        -->
+    <!-- TODO: BONUS - Create a payment modal (optional stretch goal) -->
+    <div class="modal" id="payment-modal">
+      <div class="modal-content">
+        <h3 class="modal-title">Enter Payment Details</h3>
+        <input
+          type="text"
+          id="card-name"
+          placeholder="Enter your name"
+          required
+        />
+        <input
+          type="text"
+          id="card-number"
+          placeholder="Enter card number"
+          required
+        />
+        <input type="text" id="card-cvv" placeholder="Enter CVV" required />
+        <button class="modal-btn" id="pay-btn">Pay</button>
+      </div>
+    </div>
 
-      <!-- TODO: Add discount modal (stretch goal - initially hidden) -->
-      <!-- Give it an id like "discount-modal" -->
-      <!-- Include:
-             - Promo code display
-             - Apply button or close button
-        -->
-
-      <!-- TODO: Add rating modal (stretch goal - initially hidden) -->
-      <!-- Give it an id like "rating-modal" -->
-      <!-- Include:
-             - Rating message
-             - 5 star buttons or rating input
-             - Submit rating button
-        -->
-    </main>
-
-    <script src="script.js" type="module"></script>
+    <!-- TODO: Link your JavaScript file -->
+    <script type="module" src="script.js"></script>
   </body>
 </html>
