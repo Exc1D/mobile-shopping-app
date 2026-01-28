@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TODO: Add a title tag with "TechHub - Premium Gadgets" -->
-    
-    
-    <!-- TODO: Add a meta description tag with content: "Shop premium tech gadgets including iPhone, AirPods, and Apple Watch. Fast delivery to your door." -->
-    
-    
-    <!-- TODO: Link your CSS file (index.css) using a <link> tag -->
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>EXC1D Gadgets | Exceed SRP's</title>
+
+    <meta
+      name="description"
+      content="Shop average gadgets with premium prices. We exceed everything even SRP's and shipping dates."
+    />
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- 
@@ -35,110 +35,33 @@
     ============================================
     -->
 
-    <!-- ============================================
-         TASK 1: Create the Main Container
-         ============================================
-         Create a main element to hold the primary content.
-         The <main> element represents the dominant content of the page.
-         
-         TODO: Create a <main> element with:
-         - class="container"
-         - This will center and limit the width of your app
-    -->
-    
-    <!-- Your main container here -->
-    
-      
-      <!-- ============================================
-           TASK 2: Build the Header Section
-           ============================================
-           Create a header with your store name and tagline.
-           The <header> element represents introductory content.
-           
-           TODO: Inside the main container, create a <header> element with:
-           - An <h1> containing "TechHub" (or your own store name)
-           - A <p> containing "Premium gadgets, delivered to your door"
-      -->
-      
-      <!-- Your header here -->
+    <main class="container">
+      <header>
+        <h1>EXXEED Gadgets</h1>
+        <p>Average tech that exceeds regular SRP.</p>
+      </header>
+      <secton
+        class="products-container"
+        id="products-list"
+        aria-label="Available Products"
+      >
+        <!-- Dynamically articles rendered through JS -->
+      </secton>
 
-
-      <!-- ============================================
-           TASK 3: Create the Products Section
-           ============================================
-           Use a <section> element to group product content.
-           The <section> element represents a thematic grouping of content.
-           
-           TODO: Create a <section> element with:
-           - class="products-container"
-           - id="products-list"
-           - aria-label="Available products"
-           
-           Inside, add a comment: <!-- Product cards will be dynamically inserted here by JavaScript -->
-           
-           Note: Each product card created by JS should use <article> element
-           for semantic structure (see index.js for implementation)
-      -->
-      
-      <!-- Your products section here -->
-
-
-      <!-- ============================================
-           TASK 4: Build the Cart Section
-           ============================================
-           Use an <aside> element for the shopping cart.
-           The <aside> element represents content tangentially related to main content.
-           
-           TODO: Create an <aside> element with:
-           - class="cart-section"
-           - id="cart"
-           - aria-label="Shopping cart"
-           
-           Inside this aside, add:
-           - An <h2> with class="cart-title" containing text "Your Cart"
-      -->
-      
-      <!-- Your cart aside here -->
-      
-        
-        <!-- ============================================
-             TASK 5: Create Cart Items Container
-             ============================================
-             Use an unordered list to hold cart items (semantic for a list of items).
-             
-             TODO: Create a <ul> element with:
-             - id="cart-items"
-             - class="cart-items-list"
-             - aria-live="polite" (announces changes to screen readers)
-             
-             Add a comment inside: <!-- Cart items dynamically inserted here as <li> elements -->
-             
-             Note: Each cart item created by JS should be a <li> element
-        -->
-        
-        <!-- Your cart items list here -->
-
-
-        <!-- ============================================
-             TASK 6: Add Cart Total Display
-             ============================================
-             Show the total price of items in the cart.
-             Use <div> with semantic class names for styling.
-             
-             TODO: After the cart items list, create a <div> with:
-             - class="cart-total"
-             
-             Inside this div, add two elements:
-             1. A <span> with class="cart-total-label" containing text "Total"
-             2. A <span> with:
-                - class="cart-total-price"
-                - id="total-price"
-                - aria-label="Cart total"
-                - Text content: "$0"
-        -->
-        
-        <!-- Your cart total here -->
-
+      <aside class="cart-section" id="cart" aria-label="Shopping Cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <ul class="cart-items-list" id="cart-items" aria-live="polite">
+          <!-- Cart items dynamically inserted here as li elements -->
+        </ul>
+        <div clas="cart-total">
+          <p class="cart-total-label">Total</p>
+          <span
+            class="cart-total-price"
+            id="total-price"
+            aria-label="Cart total"
+            >$0</span
+          >
+        </div>
 
         <!-- ============================================
              TASK 7: Add Checkout Button
@@ -152,13 +75,22 @@
              - aria-label="Proceed to checkout"
              - Text content: "Complete Order"
         -->
-        
-        <!-- Your checkout button here -->
 
-      <!-- End of cart section - make sure to close the <aside> tag -->
+        <!-- Your checkout button here -->
+        <button
+          class="checkout-btn"
+          id="checkout-btn"
+          type="button"
+          aria-label="Proceed to Checkout"
+        >
+          Complete Order
+        </button>
+      </aside>
+    </main>
+
+    <!-- End of cart section - make sure to close the <aside> tag -->
 
     <!-- End of main container - make sure to close the <main> tag -->
-
 
     <!-- ============================================
          TASK 8: BONUS - Create Payment Modal
@@ -239,23 +171,9 @@
          
          Note: The <dialog> element provides built-in accessibility features!
     -->
-    
+
     <!-- Your payment modal here (BONUS) -->
-
-
-    <!-- ============================================
-         TASK 9: Link JavaScript Files
-         ============================================
-         Connect your JavaScript files to make the app work.
-         
-         TODO: At the end of <body>, add two <script> tags:
-         1. <script src="data.js"></script>
-         2. <script src="index.js"></script>
-         
-         Note: data.js must come BEFORE index.js so the data is available!
-    -->
-    
-    <!-- Your script tags here -->
-    
+    <dialog></dialog>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

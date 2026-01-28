@@ -1,5 +1,4 @@
-// TODO: This is your product data array - feel free to add more gadgets!
-const gadgetsArray = [
+export const gadgetsArray = [
   {
     name: "iPhone 15 Pro",
     specs: ["A17 Pro chip", "Titanium design", "48MP camera"],
@@ -22,7 +21,3 @@ const gadgetsArray = [
     id: 2,
   },
 ];
-
-// TODO: Export the array so it can be imported in index.js
-// Uncomment the line below when you're ready to use ES6 modules
-// export default gadgetsArray;
