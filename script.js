@@ -1,3 +1,4 @@
+import { gadgetsArray } from "./data.js";
 /* 
 ===========================================
 MOBILE GADGET SHOP APP - SOLO PROJECT
@@ -49,35 +50,17 @@ NOTE: This project now uses semantic HTML!
 ===========================================
 */
 
-// ============================================
-// TODO 1: Get the gadgets data
-// ============================================
-// The gadgetsArray is available from data.js (loaded via script tag)
-// You can use it directly - no need to import
-
-// Hint: Try console.log(gadgetsArray) to see the data structure
-
-// ============================================
-// TODO 2: Set up global variables
-// ============================================
-// Create an empty array to store cart items
-
-// Your cart array here
-
-// ============================================
-// TODO 3: Get references to important DOM elements
-// ============================================
-// Use document.getElementById() or document.querySelector()
-// to get references to these elements:
-// - productsList (id: "products-list")
-// - cartSection (id: "cart")
-// - cartItemsContainer (id: "cart-items")
-// - totalPriceElement (id: "total-price")
-// - checkoutBtn (id: "checkout-btn")
-// - paymentModal (id: "payment-modal")
-// - payBtn (id: "pay-btn")
 
 // Your DOM element references here
+const productsList = document.getElementById("products-list");
+const cartSection = document.getElementById("cart");
+const cartItemsContainer = document.getElementById("cart-items");
+const totalPriceEl = document.getElementById("total-price");
+const checkoutBtn = document.getElementById("checkout-btn");
+const paymentModal = document.getElementById("payment-modal");
+const payBtn = document.getElementById("pay-btn");
+
+let cart = []
 
 // ============================================
 // TODO 4: Create a function to render products
@@ -88,19 +71,28 @@ NOTE: This project now uses semantic HTML!
 // 3. Insert the HTML into the products list container
 // 4. Set up event listeners for the "Add to Cart" buttons
 
-// IMPORTANT: Each product should be wrapped in an <article> element!
-// HTML structure example:
-// <article class="product-card">
-//     <div class="product-emoji">${product.emoji}</div>
-//     <div class="product-info">
-//         <h3 class="product-name">${product.name}</h3>
-//         <p class="product-specs">${product.specs.join(', ')}</p>
-//         <p class="product-price">$${product.price}</p>
-//     </div>
-//     <button class="add-btn" data-id="${product.id}">Add</button>
-// </article>
 
-// Your renderProducts function here
+function renderProducts(gadgetsArray){
+   const productHTML = gadgetsArray.map((product) => {
+      return `
+      <article class="product-card">
+         <div class="product-emoji">${product.emoji}</div>
+         <div>
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-specs">${product.specs.join(', ')}</p>
+            <p class="product-price">$${product.price}</p>
+         </div>
+         <div class="quantity-container">
+            <button class="add-items" id="add-item">+</button>
+            <input id="quantity-display" placeholder="0" readonly>
+            <button class="subtract" id="subtract-item">-</button>
+         </div>
+         <button class="add-btn" data-id="${product.id}">Add</button>
+      </article>
+      `
+   }).join("");
+   productsList.innerHTML = productHTML;
+}
 
 // ============================================
 // TODO 5: Create a function to add item to cart
@@ -214,6 +206,7 @@ NOTE: This project now uses semantic HTML!
 // This will display all the products
 
 // Your initialization code here
+renderProducts(gadgetsArray);
 
 /* 
 ===========================================
