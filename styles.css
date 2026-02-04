@@ -84,96 +84,54 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ============================================
-   TASK 1: Set up CSS Variables
-   ============================================
-   Create CSS custom properties (variables) for the iOS color theme.
-   This makes it easy to change colors throughout the app.
-   
-   TODO: Define the following color variables in :root
-   - --ios-bg: #F2F2F7 (light gray background)
-   - --ios-card-bg: #FFFFFF (white cards)
-   - --ios-text-primary: #000000 (black text)
-   - --ios-text-secondary: #8E8E93 (gray text)
-   - --ios-accent: #007AFF (iOS blue)
-   - --ios-border: #C6C6C8 (light border)
-   - --ios-shadow: rgba(0, 0, 0, 0.1) (subtle shadow)
-*/
+:root {
+   --color-bg: rgb(220, 220, 220); 
+   --color-card-bg: #FFFF;
+   --color-text-primary: #000;
+   --color-text-secondary: #8E8E93;
+   --color-accent:  #007AFF;
+   --color-border: #C6C6C8;
+   --color-shadow: rgba(0, 0, 0, 0.166);
 
-/* Your :root variables here */
+   --fs-large: 2.15rem;
+   --fs-mid: 1.10rem;
+   --fs-small: 0.75rem;
+}
 
-/* ============================================
-   TASK 2: Reset Default Styles
-   ============================================
-   Remove default browser margins and padding for consistent styling.
-   
-   TODO: Select all elements (*) and set:
-   - margin: 0
-   - padding: 0
-   - box-sizing: border-box
-*/
+body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+   background-color: var(--color-bg);
+   color: var(--color-text-primary);
+   line-height: 1.5;
+}
 
-/* Your universal reset here */
+.container {
+   max-width: 430px;
+   margin: 0 auto;
+   min-height: 100vh;
+   background-color: var(--color-card-bg);
+   box-shadow: 1px 1px 24px var(--color-shadow);
+}
 
-/* ============================================
-   TASK 3: Style the Body Element
-   ============================================
-   Set up the base styles for the entire page.
-   
-   TODO: Style the body element with:
-   - margin: 0
-   - font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif
-   - background-color: var(--ios-bg)
-   - color: var(--ios-text-primary)
-   - line-height: 1.5
-*/
+header {
+   background: var(--color-bg);
+   padding: 60px 20px 30px;
+   text-align: center;
+}
 
-/* Your body styles here */
+h1 {
+   font-size: var(--fs-large);
+   font-weight: 700;
+   letter-spacing: -0.5px;
+   margin-bottom: 8px;
+}
 
-/* ============================================
-   TASK 4: Create Main Container
-   ============================================
-   Create a centered container that limits width on large screens.
-   Updated to use semantic <main> element.
-   
-   TODO: Style main.container with:
-   - max-width: 430px (iPhone size)
-   - margin: 0 auto (center it)
-   - min-height: 100vh (full screen height)
-   - background-color: var(--ios-bg)
-*/
-
-/* Your main.container styles here */
-
-/* ============================================
-   TASK 5: Style the Header Section
-   ============================================
-   Create an eye-catching header with gradient background.
-   
-   TODO: Style header element with:
-   - background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-   - padding: 60px 20px 30px
-   - color: white
-   - text-align: center
-   
-   Then style header h1 with:
-   - font-size: 34px
-   - font-weight: 700
-   - letter-spacing: -0.5px
-   - margin-bottom: 8px
-   
-   And header p with:
-   - font-size: 17px
-   - font-weight: 400
-   - opacity: 0.9
-*/
-
-/* Your header styles here */
-
-/* Your header h1 styles here */
-
-/* Your header p styles here */
-
+header p {
+   font-size: var(--fs-mid);
+   font-weight: 400;
+   opacity: 0.8;
+}
 /* ============================================
    TASK 6: Style Products Section
    ============================================
