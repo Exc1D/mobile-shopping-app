@@ -75,19 +75,21 @@ let cart = []
 function renderProducts(gadgetsArray){
    const productHTML = gadgetsArray.map((product) => {
       return `
-      <article class="product-card">
+      <article class="product-card ${product.class}">
          <div class="product-emoji">${product.emoji}</div>
          <div>
             <h3 class="product-name">${product.name}</h3>
             <p class="product-specs">${product.specs.join(', ')}</p>
             <p class="product-price">$${product.price}</p>
          </div>
-         <div class="quantity-container">
-            <button class="add-items" id="add-item">+</button>
-            <input id="quantity-display" placeholder="0" readonly>
-            <button class="subtract" id="subtract-item">-</button>
-         </div>
-         <button class="add-btn" data-id="${product.id}">Add</button>
+         <div class="checkout-container">
+            <div class="quantity-container">
+               <button class="subtract" id="subtract-item">-</button>
+               <input class="quantity-display"id="quantity-display" placeholder="0" readonly>
+               <button class="add-items" id="add-item">+</button>     
+            </div>      
+            <button class="add-btn" data-id="${product.id}">Buy</button>
+          </div>
       </article>
       `
    }).join("");
