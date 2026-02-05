@@ -94,8 +94,9 @@ h1, h2, h3, h4, h5, h6 {
    --color-shadow: rgba(0, 0, 0, 0.166);
 
    --fs-large: 2.15rem;
-   --fs-mid: 1.10rem;
-   --fs-small: 0.75rem;
+   --fs-mid: 1.25rem;
+   --fs-small: 1rem;
+   --fs-xsmall: 0.75rem;
 }
 
 /* Utility Classes */
@@ -107,7 +108,6 @@ h1, h2, h3, h4, h5, h6 {
 body {
    margin: 0;
    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-   background-color: var(--color-bg);
    color: var(--color-text-primary);
    line-height: 1.5;
 }
@@ -118,10 +118,11 @@ body {
    min-height: 100vh;
    background-color: var(--color-card-bg);
    box-shadow: 1px 1px 24px var(--color-shadow);
+   padding: 0 1rem;
 }
 
 header {
-   background: linear-gradient(var(--color-bg) 60%, white 100%);
+
    padding: 60px 20px 40px;
    text-align: center;
 }
@@ -149,113 +150,106 @@ header p {
 */
 
 /* Your section.products-container styles here */
+.products-container {
+   padding: 20px;
+}
 
-/* ============================================
-   TASK 7: Create Product Card Styles
-   ============================================
-   Design beautiful iOS-style cards for each product.
-   Updated to use semantic <article> element for each product.
-   
-   TODO: Style .product-card with:
-   - background-color: var(--ios-card-bg)
-   - border-radius: 12px
-   - padding: 16px
-   - margin-bottom: 12px
-   - box-shadow: 0 2px 8px var(--ios-shadow)
-   - display: flex
-   - align-items: center
-   - gap: 16px
-   - transition: transform 0.2s ease, box-shadow 0.2s ease
-*/
+.product-card {
+   background-color: var(--color-card-bg);
+   border-radius: 12px;
+   padding: 1rem;
+   margin-bottom: 12px;
+   box-shadow: 0px 2px 8px var(--color-shadow);
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   transition: transform 0.2s ease, box-shadow 0.2s ease;  
+}
 
-/* Your .product-card styles here */
+.product-card:hover {
+   transform: translateY(-2px);
+   box-shadow:0px 4px 12px var(--color-shadow);
+   color: var(--color-card-bg);
+}
 
-/* ============================================
-   TASK 8: Add Product Card Hover Effect
-   ============================================
-   Make cards lift slightly when hovering over them.
-   
-   TODO: Style .product-card:hover with:
-   - transform: translateY(-2px)
-   - box-shadow: 0 4px 12px var(--ios-shadow)
-*/
+.phone:hover {
+   background: linear-gradient(135deg, #ffbd92 5%, #F77E2D 100%);
+}
 
-/* Your .product-card:hover styles here */
+.audio:hover{
+   background: linear-gradient(135deg, #96AED1 5%, #1b61c9 100%);
+}
 
-/* ============================================
-   TASK 9: Style Product Emoji/Icon
-   ============================================
-   Make the emoji large and prevent it from shrinking.
-   
-   TODO: Style .product-emoji with:
-   - font-size: 48px
-   - flex-shrink: 0
-*/
+.watch:hover {
+   background: linear-gradient(135deg, #f7d498  5%, #f1ac34 100%);
+}
 
-/* Your .product-emoji styles here */
+.product-emoji {
+   font-size: 48px;
+   flex-shrink: 0;
+}
 
-/* ============================================
-   TASK 10: Style Product Information Section
-   ============================================
-   Style the product name, specs, and price.
-   
-   TODO: Style these classes:
-   
-   .product-info:
-   - flex: 1
-   
-   .product-name:
-   - font-size: 20px
-   - font-weight: 600
-   - margin-bottom: 4px
-   
-   .product-specs:
-   - font-size: 14px
-   - color: var(--ios-text-secondary)
-   - margin-bottom: 8px
-   
-   .product-price:
-   - font-size: 17px
-   - font-weight: 500
-*/
+.product-info {
+   flex: 1;
+}
 
-/* Your .product-info styles here */
+.product-name {
+   font-size: var(--fs-mid);
+   font-weight: 600;
+   margin-bottom: 4px;
+}
 
-/* Your .product-name styles here */
+.product-specs {
+   font-size: var(--fs-small);
+   color: var(--color-text-secondary);
+   margin-bottom: 0.5rem;
+}
+.product-card .product-specs {
+   color: inherit;
+}
 
-/* Your .product-specs styles here */
+.product-price {
+   font-size: var(--fs-mid);
+   font-weight: 500;
+}
 
-/* Your .product-price styles here */
+.checkout-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 2px;
+}
+.quantity-container {
+   display: flex;
+   justify-content: center;
+   gap: 2px;
+}
 
-/* ============================================
-   TASK 11: Style the Add to Cart Button
-   ============================================
-   Create a beautiful iOS-style button.
-   
-   TODO: Style .add-btn with:
-   - background-color: var(--ios-accent)
-   - color: white
-   - border: none
-   - border-radius: 20px
-   - padding: 8px 20px
-   - font-size: 15px
-   - font-weight: 600
-   - cursor: pointer
-   - transition: opacity 0.2s ease
-   
-   Add hover effect (.add-btn:hover):
-   - opacity: 0.8
-   
-   Add active effect (.add-btn:active):
-   - opacity: 0.6
-*/
+.quantity-display {
+   width: 2rem;
+   text-align: center;
+   padding: 0.05em 0.5em;
+}
 
-/* Your .add-btn styles here */
+.add-btn {
+   background: var(--color-accent);
+   color: white;
+   border: none;
+   border-radius: 6px;
+   padding: 0.5rem 1.25rem;
+   font-weight: 600;
+   font-size: var(--fs-xsmall);
+   cursor: pointer;
+   transition: opacity 0.2s ease;
+}
 
-/* Your .add-btn:hover styles here */
+.add-btn:hover {
+   opacity: 0.8;
+}
 
-/* Your .add-btn:active styles here */
-
+.add-btn:active {
+   opacity: 0.6;
+}
 /* ============================================
    TASK 12: Create Cart Aside Styles
    ============================================
