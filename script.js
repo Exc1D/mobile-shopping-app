@@ -62,16 +62,6 @@ const payBtn = document.getElementById("pay-btn");
 
 let cart = []
 
-// ============================================
-// TODO 4: Create a function to render products
-// ============================================
-// This function should:
-// 1. Loop through gadgetsArray (use map or forEach)
-// 2. Create HTML for each product wrapped in <article> element
-// 3. Insert the HTML into the products list container
-// 4. Set up event listeners for the "Add to Cart" buttons
-
-
 function renderProducts(gadgetsArray){
    const productHTML = gadgetsArray.map((product) => {
       return `
@@ -94,6 +84,15 @@ function renderProducts(gadgetsArray){
       `
    }).join("");
    productsList.innerHTML = productHTML;
+
+   document.querySelectorAll(".add-btn").forEach(btn => {
+   btn.addEventListener("click", (e) => {
+   const productId = parseInt(e.target.dataset.id);
+   addToCart(productId);
+   });
+
+   });
+
 }
 
 // ============================================
@@ -109,6 +108,15 @@ function renderProducts(gadgetsArray){
 // const product = gadgetsArray.find(item => item.id === productId);
 
 // Your addToCart function here
+
+function addToCart(productId){
+   const product = gadgetsArray.find(item => item.id === productId);
+   if(product){
+      cart.push(product);
+      console.log(`${product.name} was added to the cart`);
+      console.log(cart)
+   }    
+} 
 
 // ============================================
 // TODO 6: Create a function to render the cart
@@ -131,6 +139,9 @@ function renderProducts(gadgetsArray){
 // </li>
 
 // Your renderCart function here
+function renderCart(){
+   
+}
 
 // ============================================
 // TODO 7: Create a function to remove item from cart

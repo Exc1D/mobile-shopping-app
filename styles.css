@@ -119,11 +119,11 @@ body {
    background-color: var(--color-card-bg);
    box-shadow: 1px 1px 24px var(--color-shadow);
    padding: 0 1rem;
+   position: relative;
 }
 
 header {
-
-   padding: 60px 20px 40px;
+   padding: 50px 20px 40px;
    text-align: center;
 }
 
@@ -274,6 +274,47 @@ header p {
 */
 
 /* Your aside.cart-section styles here */
+/* .cart-btn{
+   position: fixed;
+   bottom: 30px;
+   right: 205px;
+   font-size: var(--fs-mid);
+   padding: auto;
+   border-radius: 50%;
+   background-color: var(--color-text-primary);
+   color: var(--color-card-bg);
+} */
+.cart-btn {
+   background: inherit;
+   border: none;
+   color: var(--color-border);
+   position: absolute;
+   top: 40px;
+   right: 40px;
+   font-size: var(--fs-small);
+}
+aside.cart-section {
+   position: fixed;
+   z-index: 100;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.7);
+   display: none;
+   justify-content: center;
+   align-items: center;
+}
+
+.cart-content {
+   max-width: 430px;
+   width: 90%;
+   background-color: var(--color-card-bg);
+   border-radius: 12px;
+   padding: 20px;
+   margin: 20px;
+   box-shadow: 0 2px 8px var(--color-shadow);
+}
 
 /* Your aside.cart-section.show styles here */
 

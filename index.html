@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+
     <title>Fruit. | Average Tech Worth your Kindey</title>
 
     <meta
@@ -16,6 +21,7 @@
   <body>
     <main class="container">
       <header>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
         <h1>Fruit.</h1>
         <p>Average Tech Worth your Kindey</p>
       </header>
@@ -28,7 +34,8 @@
       </secton>
 
       <aside class="cart-section" id="cart" aria-label="Shopping Cart">
-        <h2 class="cart-title">Your Cart</h2>
+        <div class="cart-content">
+          <h2 class="cart-title">Your Cart</h2>
         <ul class="cart-items-list" id="cart-items" aria-live="polite">
           <!-- Cart items dynamically inserted here as li elements -->
         </ul>
@@ -49,6 +56,7 @@
         >
           Complete Order
         </button>
+        </div>
       </aside>
     </main>
     <dialog class="modal" id="payment-modal" aria-labelledby="modal-title">
