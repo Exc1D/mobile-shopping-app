@@ -123,7 +123,7 @@ body {
 }
 
 header {
-   padding: 50px 20px 40px;
+   padding: 60px 20px 40px;
    text-align: center;
 }
 
@@ -250,49 +250,45 @@ header p {
 .add-btn:active {
    opacity: 0.6;
 }
-/* ============================================
-   TASK 12: Create Cart Aside Styles
-   ============================================
-   Style the cart area that appears when items are added.
-   Updated to use semantic <aside> element.
-   
-   TODO: Style aside.cart-section with:
-   - background-color: var(--ios-card-bg)
-   - border-radius: 12px
-   - padding: 20px
-   - margin: 20px
-   - box-shadow: 0 2px 8px var(--ios-shadow)
-   - display: none (hidden by default)
-   
-   Create aside.cart-section.show to display it:
-   - display: block
-   
-   Style .cart-title:
-   - font-size: 22px
-   - font-weight: 700
-   - margin-bottom: 16px
-*/
 
-/* Your aside.cart-section styles here */
-/* .cart-btn{
-   position: fixed;
-   bottom: 30px;
-   right: 205px;
-   font-size: var(--fs-mid);
-   padding: auto;
-   border-radius: 50%;
-   background-color: var(--color-text-primary);
-   color: var(--color-card-bg);
-} */
 .cart-btn {
+   padding: 10px 0;
    background: inherit;
    border: none;
    color: var(--color-border);
    position: absolute;
-   top: 40px;
+   top: 25px;
    right: 40px;
    font-size: var(--fs-small);
 }
+
+.cart-btn:hover {
+   color: var(--color-accent);
+}
+
+.item-count {
+   background-color: var(--color-text-primary);
+   padding: 0px 3px;
+   border-radius: 50%;
+   font-size: var(--fs-xsmall);
+   position: absolute;
+   top: 0px;
+   right: px;
+}
+
+.close-cart-btn {
+   background: transparent;
+   border: none;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   font-weight: 900;
+}
+
+.close-cart-btn:hover {
+   color: #ff4242;
+}
+
 aside.cart-section {
    position: fixed;
    z-index: 100;
@@ -305,7 +301,6 @@ aside.cart-section {
    justify-content: center;
    align-items: center;
 }
-
 .cart-content {
    max-width: 430px;
    width: 90%;
@@ -314,11 +309,13 @@ aside.cart-section {
    padding: 20px;
    margin: 20px;
    box-shadow: 0 2px 8px var(--color-shadow);
+   position: relative;
 }
 
-/* Your aside.cart-section.show styles here */
+.cart-title {
+   margin-bottom: 1rem;
+}
 
-/* Your .cart-title styles here */
 
 /* ============================================
    TASK 13: Style Cart Items List

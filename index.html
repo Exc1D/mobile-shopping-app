@@ -21,7 +21,8 @@
   <body>
     <main class="container">
       <header>
-        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        <button class="cart-btn" id="cart-btn"><i class="fa-solid fa-cart-shopping"></i>
+          <span class="item-count" id="item-count">0</span></button>
         <h1>Fruit.</h1>
         <p>Average Tech Worth your Kindey</p>
       </header>
@@ -35,6 +36,7 @@
 
       <aside class="cart-section" id="cart" aria-label="Shopping Cart">
         <div class="cart-content">
+          <button class="close-cart-btn" id="close-cart-btn">X</button>
           <h2 class="cart-title">Your Cart</h2>
         <ul class="cart-items-list" id="cart-items" aria-live="polite">
           <!-- Cart items dynamically inserted here as li elements -->

@@ -72,12 +72,7 @@ function renderProducts(gadgetsArray){
             <p class="product-specs">${product.specs.join(', ')}</p>
             <p class="product-price">$${product.price}</p>
          </div>
-         <div class="checkout-container">
-            <div class="quantity-container">
-               <button class="subtract" id="subtract-item">-</button>
-               <input class="quantity-display"id="quantity-display" placeholder="0" readonly>
-               <button class="add-items" id="add-item">+</button>     
-            </div>      
+         <div class="checkout-container">    
             <button class="add-btn" data-id="${product.id}">Buy</button>
           </div>
       </article>
@@ -95,27 +90,12 @@ function renderProducts(gadgetsArray){
 
 }
 
-// ============================================
-// TODO 5: Create a function to add item to cart
-// ============================================
-// This function should:
-// 1. Take a product ID as parameter
-// 2. Find the product in gadgetsArray using array.find()
-// 3. Add the product to the cart array
-// 4. Call renderCart() to update the display
-
-// Hint: Use array.find() like this:
-// const product = gadgetsArray.find(item => item.id === productId);
-
-// Your addToCart function here
-
 function addToCart(productId){
    const product = gadgetsArray.find(item => item.id === productId);
    if(product){
       cart.push(product);
-      console.log(`${product.name} was added to the cart`);
-      console.log(cart)
-   }    
+   }
+   renderCart()
 } 
 
 // ============================================
@@ -140,7 +120,22 @@ function addToCart(productId){
 
 // Your renderCart function here
 function renderCart(){
-   
+   document.getElementById("item-count").textContent = cart.length
+   cartItemsContainer.innerHTML = ""
+   cart.forEach((item) => {
+      cartItemsContainer.innerHTML +=
+      `
+      <li class="cart-item">
+         <span class="cart-item-name">${item.name}</span>
+         <div class="quantity-container">
+               <button class="subtract" id="subtract-item">-</button>
+               <input class="quantity-display"id="quantity-display" placeholder="0" readonly>
+               <button class="add-items" id="add-item">+</button>     
+         </div>  
+         <span class="cart-item-price">${item.price}</span>
+      </li>
+      `
+   })
 }
 
 // ============================================
@@ -220,6 +215,8 @@ function renderCart(){
 
 // Your initialization code here
 renderProducts(gadgetsArray);
+document.getElementById("cart-btn").addEventListener("click", () => cartSection.style.display = "flex")
+   document.getElementById("close-cart-btn").addEventListener("click", () => cartSection.style.display = "none")
 
 /* 
 ===========================================
